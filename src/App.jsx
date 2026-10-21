@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import Programs from './pages/Programs.jsx';
 import About from './pages/About.jsx';
 import Register from './pages/Register.jsx';
+import Components from './pages/Components.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
     <Route path="/program" element={<Programs />} />
     <Route path="/tentang-kami" element={<About />} />
     <Route path="/pendaftaran" element={<Register />} />
+    <Route path="/komponen" element={<Components />} />
     <Route path="/beranda" element={<Navigate to="/" replace />} />
     <Route path="*" element={<NotFound />} />
   </Routes></main><Footer /></>;
