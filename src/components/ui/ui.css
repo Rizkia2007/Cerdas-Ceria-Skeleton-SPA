@@ -1,0 +1,193 @@
+/* ===== Button (melengkapi .button di styles.css) ===== */
+.button {
+    transition: background-color .15s, box-shadow .15s
+}
+
+.button-primary:hover:not(:disabled) {
+    background: var(--dark)
+}
+
+.button-outline:hover:not(:disabled) {
+    background: var(--pale)
+}
+
+.button:focus-visible {
+    outline: 3px solid #8acaff;
+    outline-offset: 2px
+}
+
+.button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    box-shadow: none
+}
+
+.button-full {
+    width: 100%
+}
+
+/* ===== Card ===== */
+.ui-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+    border: 1px solid #edf3f7;
+    background: #fff;
+    text-align: center
+}
+
+.ui-card-yellow {
+    background: #fff9e3;
+    border-color: #fff1bd
+}
+
+.ui-card-pink {
+    background: #fff0f7;
+    border-color: #ffdcec
+}
+
+.ui-card-blue {
+    background: #eaf6ff;
+    border-color: #d4ebfc
+}
+
+.ui-card-green {
+    background: #eaf8f0;
+    border-color: #cfeedd
+}
+
+.ui-card-selected {
+    border: 2px solid var(--blue);
+    box-shadow: 0 8px 22px #2496f326
+}
+
+.ui-card-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ffffffb8;
+    color: var(--blue);
+    margin-bottom: 6px
+}
+
+.ui-card-title {
+    margin: 8px 0;
+    color: #35485d;
+    font-size: 16px
+}
+
+.ui-card-body {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55
+}
+
+.ui-card-footer {
+    margin-top: 15px
+}
+
+/* ===== FormField ===== */
+.ui-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px
+}
+
+.ui-label {
+    color: #536477;
+    font-size: 12px;
+    font-weight: 800
+}
+
+.ui-required {
+    color: var(--blue)
+}
+
+.ui-optional {
+    font-weight: 500;
+    color: var(--muted)
+}
+
+.ui-input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #dce6ed;
+    border-radius: 10px;
+    padding: 12px;
+    color: #33475c;
+    background: #fbfdff
+}
+
+.ui-input::placeholder {
+    color: #a0adba
+}
+
+.ui-input:focus {
+    outline: 3px solid #8acaff55;
+    border-color: var(--blue)
+}
+
+.ui-input:disabled {
+    background: #f0f3f6;
+    color: #9aa6b2;
+    cursor: not-allowed
+}
+
+.ui-input-error {
+    border-color: #d64545;
+    background: #fff7f7
+}
+
+.ui-input-error:focus {
+    outline-color: #d6454544;
+    border-color: #d64545
+}
+
+.ui-message {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.ui-message-error {
+    color: #c03636;
+    font-weight: 700
+}
+
+/* ===== Halaman demo /komponen ===== */
+.demo-section {
+    margin: 34px 0
+}
+
+.demo-section h2 {
+    color: var(--dark);
+    margin: 0 0 6px
+}
+
+.demo-section>p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 16px
+}
+
+.demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px
+}
+
+.demo-caption {
+    font-size: 12px;
+    font-weight: 800;
+    color: #536477;
+    margin: 14px 0 8px
+}

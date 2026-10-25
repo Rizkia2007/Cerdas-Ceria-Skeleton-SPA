@@ -1,0 +1,190 @@
+/* ===== Navbar responsif ===== */
+.brand {
+    display: inline-flex;
+    align-items: center
+}
+
+.brand-logo {
+    display: block;
+    height: 56px;
+    width: auto
+}
+
+.nav-panel {
+    display: contents
+}
+
+.nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--dark);
+    cursor: pointer
+}
+
+.nav-toggle:focus-visible {
+    outline: 3px solid #8acaff;
+    outline-offset: 2px
+}
+
+/* ===== Jarak navbar dari atas ===== */
+.site-header {
+    margin-top: 40px
+}
+
+/* Jarak atas saat menu menggulir ke section */
+section[id],
+footer[id] {
+    scroll-margin-top: 100px
+}
+
+/* ===== Navbar menempel di atas saat halaman digulir ===== */
+.site-header {
+    position: sticky;
+    top: 12px;
+    z-index: 100
+}
+
+.site-header.is-open {
+    max-height: calc(100vh - 24px);
+    overflow-y: auto
+}
+
+@media(max-width:991.98px) {
+    .site-header {
+        margin-top: 20px
+    }
+}
+
+@media(max-width:991.98px) {
+    .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-radius: 36px;
+        padding: 10px 16px;
+        min-height: 68px;
+        gap: 0
+    }
+
+    .site-header.is-open {
+        border-radius: 28px
+    }
+
+    .brand-logo {
+        height: 46px
+    }
+
+    .nav-toggle {
+        display: inline-flex
+    }
+
+    .nav-panel {
+        display: none;
+        flex: 0 0 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 10px 4px 8px
+    }
+
+    .site-header.is-open .nav-panel {
+        display: flex
+    }
+
+    .main-nav {
+        order: 0;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 13px 8px;
+        border-bottom: 1px solid #eef4f8
+    }
+
+    .nav-link.active {
+        box-shadow: none;
+        color: var(--blue)
+    }
+
+    .nav-cta {
+        width: 100%
+    }
+}
+
+/* ===== Footer responsif ===== */
+.site-footer {
+    display: block;
+    padding: 34px 8px 22px
+}
+
+.footer-logo {
+    display: block;
+    height: 64px;
+    width: auto;
+    margin-bottom: 10px
+}
+
+.site-footer>.row p.footer-about {
+    display: block;
+    max-width: 260px;
+    line-height: 1.6
+}
+
+.site-footer>.row p.footer-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: none;
+    margin: 8px 0
+}
+
+.site-footer .copyright {
+    margin-top: 26px !important
+}
+
+/* ===== Perapian footer ===== */
+.site-footer {
+    margin-top: 40px
+}
+
+.site-footer h3 {
+    margin: 4px 0 12px
+}
+
+.site-footer .row a:not(.social-links a) {
+    margin: 0;
+    padding: 5px 0
+}
+
+.site-footer .footer-line {
+    overflow-wrap: anywhere
+}
+
+/* ===== Lebar konten seluruh halaman ===== */
+:root {
+    --page-width: 1280px;
+    --page-gutter: 48px
+}
+
+.page-shell,
+.site-header,
+.site-footer {
+    width: min(var(--page-width), calc(100% - var(--page-gutter)))
+}
+
+@media(max-width:560px) {
+    :root {
+        --page-gutter: 28px
+    }
+}
