@@ -1,0 +1,119 @@
+.login-page {
+  --blue: #1f8bf2;
+  --blue-dark: #1473d6;
+  --blue-soft: #e4f2fd;
+  --text: #2f3e5c;
+  --muted: #7a8599;
+  --border: #e3e8ef;
+
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--text);
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px 56px;
+}
+
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+  box-sizing: border-box;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-card h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-align: center;
+}
+
+.login-lead {
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: center;
+}
+
+.login-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.login-card input {
+  width: 100%;
+  height: 38px;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--text);
+  background: #fafbfd;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 12px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.login-card input::placeholder {
+  color: #a5adbb;
+}
+
+.login-card input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(31, 139, 242, 0.15);
+}
+
+.login-error {
+  margin: 0;
+  padding: 9px 12px;
+  font-size: 11px;
+  color: #b3342f;
+  background: #fdecec;
+  border-radius: 10px;
+}
+
+.login-submit {
+  height: 40px;
+  margin-top: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--blue);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.login-submit:hover {
+  background: var(--blue-dark);
+}
+
+.login-back {
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.login-back:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
+}

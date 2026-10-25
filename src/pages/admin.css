@@ -1,0 +1,332 @@
+.admin-page {
+  --blue: #1f8bf2;
+  --blue-dark: #1473d6;
+  --blue-soft: #e4f2fd;
+  --text: #2f3e5c;
+  --muted: #7a8599;
+  --border: #e3e8ef;
+
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--text);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.admin-page *,
+.admin-page *::before,
+.admin-page *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.admin-header h1 {
+  margin: 0 0 2px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.admin-header p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.admin-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--blue);
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 18px;
+  cursor: pointer;
+}
+
+.admin-export:hover:not(:disabled) {
+  background: var(--blue-dark);
+}
+
+.admin-export:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-dark);
+  background: #fff;
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+}
+
+.admin-logout:hover {
+  background: var(--blue-soft);
+}
+
+/* ---------- Statistik ---------- */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.admin-stats div {
+  background: var(--blue-soft);
+  border-radius: 16px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-stats strong {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.admin-stats span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ---------- Toolbar ---------- */
+.admin-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.admin-toolbar input,
+.admin-toolbar select {
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--text);
+  background: #fafbfd;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 36px;
+  outline: none;
+}
+
+.admin-toolbar input {
+  flex: 1;
+}
+
+.admin-toolbar input:focus,
+.admin-toolbar select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(31, 139, 242, 0.15);
+}
+
+/* ---------- Tabel ---------- */
+.admin-table-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.admin-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-table td small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.admin-table td small a {
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+
+.admin-table td small a:hover {
+  text-decoration: underline;
+}
+
+.admin-table tr.is-open td {
+  background: #f6fafe;
+  border-bottom-color: transparent;
+}
+
+.admin-link {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.admin-link:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
+}
+
+.admin-detail td {
+  background: #f6fafe;
+  padding-top: 0;
+}
+
+.admin-detail dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.admin-detail dt {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.admin-detail dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ---------- Status & hapus ---------- */
+.status-select {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.status-baru {
+  background: #fff1d6;
+  color: #a86500;
+}
+
+.status-sudah-dihubungi {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.status-terdaftar {
+  background: #dcf5e5;
+  color: #1f8a4c;
+}
+
+.admin-delete {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #d9534f;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.admin-delete:hover {
+  background: #fdecec;
+  border-color: #f5c6c4;
+}
+
+/* ---------- Lain-lain ---------- */
+.admin-empty {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  padding: 40px 20px;
+  background: #fff;
+  border: 1px dashed #c9d3e0;
+  border-radius: 18px;
+}
+
+.admin-footnote {
+  margin: 14px 0 0;
+  font-size: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.admin-page :focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-detail dl {
+    grid-template-columns: 1fr;
+  }
+}
