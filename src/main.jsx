@@ -8,6 +8,7 @@ import './styles.css';
 import './layout.css';
 import './home.css';
 import './detail.css';
+import './app.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode><BrowserRouter><App /></BrowserRouter></React.StrictMode>,

@@ -38,17 +38,22 @@ export default function Home() {
           <Link className="button button-primary" to="/pendaftaran">
             Daftar Sekarang
           </Link>
-          <a className="button button-outline" href="/#program">
-            Lihat Sekarang
-          </a>
+          <Link className="button button-outline" to="/program">
+            Lihat Program
+          </Link>
         </div>
       </section>
-       <WhyUs />
-       <ProgramHighlights />
-       <Packages />
-       <Activities />
-       <Testimonials />
-       <Cta />
+
+      <WhyUs />
+
+      <div className="web-only">
+        <ProgramHighlights />
+        <Packages />
+        <Activities />
+        <Testimonials />
+      </div>
+
+      <Cta />
     </>
   );
 }
