@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Check, ChevronDown } from 'lucide-react';
 import { addRegistration } from '../utils/registrations.js';
 import './register.css';
+import './registerTweaks.css';
 
 const packages = [
   {
@@ -92,11 +93,14 @@ export default function Register() {
       {/* Banner Pendaftaran */}
       <section className="register-banner">
         <div className="register-character">
-          {/* Ganti placeholder ini dengan <img src={...} alt="Maskot Cerdas Ceria" /> */}
-          <div className="placeholder-character">
-            ✦<span>☺</span>✦
-          </div>
-        </div>
+        <img
+          src="/images/register/hero.png"
+          alt="Maskot Cerdas Ceria"
+          width="500"
+          height="450"
+          fetchpriority="high"
+        />
+      </div>
 
         <div>
           <span className="register-badge">Yuk, Daftar Sekarang</span>

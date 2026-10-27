@@ -1,0 +1,284 @@
+/* ===== Tampilan Pendaftaran: lebar sejajar navbar, gambar menempel bawah, teks lebih besar ===== */
+
+/* Lebar mengikuti navbar (lebar diatur oleh .page-shell) */
+.register-page {
+    max-width: none;
+    padding: 24px 0 48px
+}
+
+/* Banner: gambar menempel ke tepi bawah */
+.register-banner {
+    min-height: 170px;
+    gap: 40px;
+    padding: 0 40px 0 56px;
+    overflow: hidden
+}
+
+.register-character {
+    align-self: flex-end
+}
+
+.register-banner img {
+    width: 230px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: -10px
+}
+
+.register-badge {
+    font-size: 12px;
+    padding: 5px 16px;
+    margin-bottom: 10px
+}
+
+.register-banner h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    line-height: 1.25
+}
+
+.register-banner p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 540px
+}
+
+/* Kartu form */
+.register-card {
+    padding: 32px 36px 28px;
+    border-radius: 28px
+}
+
+.form-section {
+    padding-bottom: 28px;
+    margin-bottom: 28px
+}
+
+.form-section-title {
+    gap: 12px;
+    margin: 8px 0 18px
+}
+
+.form-section-title span {
+    width: 40px;
+    height: 40px;
+    font-size: 14px
+}
+
+.form-section-title h2 {
+    font-size: 19px
+}
+
+.form-section-title small {
+    font-size: 13px
+}
+
+/* Isian */
+.form-grid {
+    gap: 18px 24px
+}
+
+.form-grid label,
+.notes-field {
+    gap: 8px;
+    font-size: 14px
+}
+
+.form-grid label small,
+.notes-field small {
+    font-size: 13px
+}
+
+.register-page input[type='text'],
+.register-page input[type='tel'],
+.register-page input[type='email'],
+.register-page select,
+.register-page textarea {
+    font-size: 15px;
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 10px
+}
+
+.select-wrapper select {
+    padding-right: 40px
+}
+
+.select-wrapper svg {
+    right: 14px
+}
+
+.notes-field textarea {
+    height: 96px;
+    padding: 12px 14px
+}
+
+/* Paket */
+.package-grid {
+    gap: 16px
+}
+
+.package-card {
+    padding: 26px 18px 20px;
+    border-radius: 20px
+}
+
+.package-radio {
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    right: 14px
+}
+
+.package-card.selected .package-radio {
+    background: radial-gradient(circle, var(--blue) 0 4.5px, #fff 5px)
+}
+
+.package-card h3 {
+    margin-bottom: 6px;
+    font-size: 17px
+}
+
+.package-card>p {
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 1.45
+}
+
+.package-price strong {
+    font-size: 22px
+}
+
+.package-price small {
+    font-size: 12px
+}
+
+.package-card ul {
+    gap: 11px
+}
+
+.package-card li {
+    gap: 8px;
+    font-size: 13px
+}
+
+.package-card li svg {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    padding: 3.5px
+}
+
+.outline-button {
+    min-width: 128px;
+    padding: 8px 24px;
+    font-size: 14px
+}
+
+/* Jadwal */
+.schedule-option {
+    gap: 10px;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 15px
+}
+
+.schedule-option input {
+    width: 18px;
+    height: 18px
+}
+
+.schedule-option input:checked {
+    background: radial-gradient(circle, var(--blue) 0 4.5px, #fff 5px)
+}
+
+/* Tombol kirim dan catatan */
+.register-submit {
+    height: 52px;
+    font-size: 16px
+}
+
+.register-note {
+    margin-top: 14px;
+    font-size: 13px
+}
+
+/* ===== Perapian banner: iPad dan HP ===== */
+
+/* Teks banner tidak menempel ke tepi atas dan bawah */
+.register-banner>div:not(.register-character) {
+    padding: 28px 0
+}
+
+.register-banner h1 {
+    text-wrap: balance
+}
+
+/* iPad */
+@media (max-width:991.98px) {
+    .register-banner {
+        gap: 28px;
+        padding: 0 28px 0 36px
+    }
+
+    .register-banner img {
+        width: 190px
+    }
+
+    .register-banner h1 {
+        font-size: 26px
+    }
+
+    .register-banner p {
+        font-size: 15px
+    }
+}
+
+/* HP: teks di atas, gambar menempel ke tepi bawah banner */
+@media (max-width:600px) {
+    .register-banner {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 26px 20px 0;
+        text-align: center
+    }
+
+    .register-banner>div:not(.register-character) {
+        padding: 0
+    }
+
+    .register-character {
+        order: 2;
+        align-self: center
+    }
+
+    .register-banner img {
+        width: 210px;
+        margin-bottom: -4px
+    }
+
+    .register-banner h1 {
+        font-size: 24px
+    }
+
+    .register-banner p {
+        font-size: 15px
+    }
+
+    .register-card {
+        padding: 22px 18px 20px
+    }
+
+    .form-grid {
+        gap: 16px
+    }
+
+    .register-page input[type='text'],
+    .register-page input[type='tel'],
+    .register-page input[type='email'],
+    .register-page select,
+    .register-page textarea {
+        font-size: 16px
+    }
+}

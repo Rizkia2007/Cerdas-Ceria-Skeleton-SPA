@@ -11,7 +11,7 @@ import './detail.css';
 import './app.css';
 
 createRoot(document.getElementById('root')).render(
-  <React.StrictMode><BrowserRouter><App /></BrowserRouter></React.StrictMode>,
+  <React.StrictMode><BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}><App /></BrowserRouter></React.StrictMode>,
 );
 
 if ('serviceWorker' in navigator) {

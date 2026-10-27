@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -8,22 +8,54 @@ import ScrollToHash from './components/ScrollToHash.jsx';
 import Home from './pages/Home.jsx';
 import NotFound from './pages/NotFound.jsx';
 
-const Programs = lazy(() => import('./pages/Programs.jsx'));
-const Kegiatan = lazy(() => import('./pages/Kegiatan.jsx'));
-const Kontak = lazy(() => import('./pages/Kontak.jsx'));
+// Halaman yang dipakai pengunjung: dipecah (lazy) dan diunduh di latar belakang
+const loaders = {
+  programs: () => import('./pages/Programs.jsx'),
+  kegiatan: () => import('./pages/Kegiatan.jsx'),
+  kontak: () => import('./pages/Kontak.jsx'),
+  register: () => import('./pages/Register.jsx'),
+  registerSuccess: () => import('./pages/RegisterSuccess.jsx'),
+  membaca: () => import('./pages/ProgramMembaca.jsx'),
+  menulis: () => import('./pages/ProgramMenulis.jsx'),
+  berhitung: () => import('./pages/ProgramBerhitung.jsx'),
+};
+
+const Programs = lazy(loaders.programs);
+const Kegiatan = lazy(loaders.kegiatan);
+const Kontak = lazy(loaders.kontak);
+const Register = lazy(loaders.register);
+const RegisterSuccess = lazy(loaders.registerSuccess);
+const ProgramMembaca = lazy(loaders.membaca);
+const ProgramMenulis = lazy(loaders.menulis);
+const ProgramBerhitung = lazy(loaders.berhitung);
+
+// Halaman jarang dibuka: lazy biasa, tanpa diunduh lebih dulu
 const About = lazy(() => import('./pages/About.jsx'));
-const Register = lazy(() => import('./pages/Register.jsx'));
-const RegisterSuccess = lazy(() => import('./pages/RegisterSuccess.jsx'));
 const Admin = lazy(() => import('./pages/Admin.jsx'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin.jsx'));
 const Components = lazy(() => import('./pages/Components.jsx'));
-const ProgramMembaca = lazy(() => import('./pages/ProgramMembaca.jsx'));
-const ProgramMenulis = lazy(() => import('./pages/ProgramMenulis.jsx'));
-const ProgramBerhitung = lazy(() => import('./pages/ProgramBerhitung.jsx'));
 
 export default function App() {
   const { pathname } = useLocation();
   const isAdmin = pathname.startsWith('/admin');
+
+  // Setelah halaman pertama tampil, unduh halaman lain saat browser sedang senggang
+  useEffect(() => {
+    if (navigator.connection && navigator.connection.saveData) return undefined;
+
+    const prefetch = () => {
+      Object.values(loaders).forEach((load) => {
+        load().catch(() => {});
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(prefetch, { timeout: 3000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = window.setTimeout(prefetch, 1500);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <div className={isAdmin ? 'app app--admin' : 'app'}>
@@ -31,7 +63,7 @@ export default function App() {
       <Header />
       {!isAdmin && <AppBar />}
       <main className="page-shell">
-        <Suspense fallback={<p>Memuat...</p>}>
+        <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/program" element={<Programs />} />
