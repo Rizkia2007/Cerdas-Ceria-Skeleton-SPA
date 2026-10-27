@@ -238,3 +238,8 @@
         color: var(--blue)
     }
 }
+/* Beranda mode aplikasi: tombol Daftar sudah ada di tab bar */
+@media(max-width:991.98px){
+  .home-hero-actions,
+  .cta-btn{display:none}
+}
