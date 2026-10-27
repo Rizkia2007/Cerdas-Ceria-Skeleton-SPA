@@ -254,7 +254,6 @@ export default function Register() {
           <div className="form-section-title schedule-title">
             <span>04</span>
             <h2>Pilih Waktu Belajar</h2>
-            <small>2 jam setiap pertemuan</small>
           </div>
 
           <div className="schedule-grid">
