@@ -238,8 +238,33 @@
         color: var(--blue)
     }
 }
+
 /* Beranda mode aplikasi: tombol Daftar sudah ada di tab bar */
-@media(max-width:991.98px){
-  .home-hero-actions,
-  .cta-btn{display:none}
+@media(max-width:991.98px) {
+
+    .home-hero-actions,
+    .cta-btn {
+        display: none
+    }
+}
+
+/* Mode aplikasi: jarak antara bar atas dan isi */
+@media(max-width:991.98px) {
+    :root {
+        --page-top: 16px;
+        --section-top: 8px
+    }
+
+    .app:not(.app--admin) .page-shell {
+        margin-top: var(--page-top)
+    }
+
+    .app:not(.app--admin) .dp-hero::before {
+        top: calc(var(--page-top) * -1)
+    }
+
+    .page-shell>.home-program:first-child,
+    .page-shell>.home-activity:first-child {
+        padding-top: var(--section-top)
+    }
 }
